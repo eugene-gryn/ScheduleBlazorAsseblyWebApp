@@ -1,0 +1,34 @@
+﻿@using ScheduleBlazorAssemblyWebApp.Pages
+@namespace ScheduleBlazorAssemblyWebApp.Pages.MainPage
+
+<div class="container-fluid p-0">
+    <div class="row g-0">
+        @if (!Reverse)
+        {
+            <div class="col-lg-6 position-relative">
+                <img class="img-fluid p-4" style="height: 100%; width: 100%;" src="@ImgUrl" alt="<>"/>
+            </div>
+            <div class="col-lg-6">
+                <div class="d-flex flex-column justify-content-center h-100">
+                    <p class="text-center">
+                        @TextBody
+                    </p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-lg-6">
+                <div class="d-flex flex-column justify-content-center h-100">
+                    <p class="text-center">
+                        @TextBody
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 position-relative">
+                <img class="img-fluid p-4" style="height: 100%; width: 100%;" src="@ImgUrl" alt="<>"/>
+            </div>
+        }
+
+    </div>
+</div>

@@ -1,76 +1,80 @@
-﻿@page "/"
+﻿@namespace ScheduleBlazorAssemblyWebApp.Pages.MainPage
+@page "/"
+@using ScheduleBlazorAssemblyWebApp.FilenameHandlers
+
 
 <div class="container">
-    <img src="<>" alt="<>" />
-    <div class="block">
-        <div class="d-flex flex-row">
-            <img src="<>" alt="<>" />
-            <div class="text-block"></div>
-        </div>
-        <div class="d-flex flex-row">
-            <div class="text-block"></div>
-            <img src="<>" alt="<>" />
-        </div>
-    </div>
-    <div id="carousel" class="carousel slide" data-ride="carousel" style="display: inline-block;">
-        <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-            <li data-target="#carousel" data-slide-to="2"></li>
-        </ol>
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="" alt="...">
-                <div class="carousel-caption">
-                    <h3>Заглавие</h3>
-                    <p>Подпись к картинке</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/examples/images/c-2.jpg" alt="...">
-                <div class="carousel-caption">
-                    <h3>Заглавие</h3>
-                    <p>Подпись к картинке</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="/examples/images/c-3.jpg" alt="...">
-                <div class="carousel-caption">
-                    <h3>Заглавие</h3>
-                    <p>Подпись к картинке</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="d-flex flex-row">
-        <p>Информация про нас</p>
-        <p>Где нас найти</p>
-    </div>
-</div>
-<div class="footer d-flex flex-row">
-    <div class="block1">
-        <p class="name">Имя</p>
-        <p class="by">Сделано петушками</p>
-        <ol>
-            <li>Оранжевый</li>
-            <li>Зелёный</li>
-            <li>Синий</li>
-        </ol>
-    </div>
-    <div class="block3">
-        <p>Ссылка на разные каналы связи</p>
-        <div class="d-flex flex-row">
-            <a href=""><img src="" alt="..."></a>
-            <a href=""><img src="" alt="..."></a>
-            <a href=""><img src="" alt="..."></a>
-            <a href=""><img src="" alt="..."></a>
-        </div>
-    </div>
-    <div class="block2">
-        <div class="location">
-            <div class="map">
+
+    <section id="MainLogo" class="d-flex align-items-center">
+        <div
+            class="container d-flex flex-column justify-content-center align-items-center text-center position-relative">
+            <img
+                class="img-fluid m-2 p-3"
+                style="height: auto; max-width: 45%;"
+                src="@tempImg.IndexBigLogo"
+                alt="Schedule logo big"/>
+            <h2
+                class="my-4">
+                Welcome to Schedule Web App
+            </h2>
+            <div class="d-flex">
+                @if (IsLogged)
+                {
+                    <a href="#" class="btn btn-success mx-2">Go to schedule!</a>
+                }
+                else
+                {
+                    <a href="#" class="btn btn-success mx-2">Sing up</a>
+                    <a href="#" class="btn btn-outline-primary mx-2">Sing in</a>
+                }
 
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="Pluses" class="py-4">
+        <PluseComponent
+            ImgUrl="@tempImg.AboutSectionImgs[0]"
+            TextBody="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta fermentum nisi vitae porta. Etiam molestie ex tellus, nec rutrum sem ultricies nec. Etiam fermentum turpis a nulla pellentesque, eget rhoncus ligula volutpat. Vivamus eu orci egestas, porttitor mi vel, rhoncus est. Cras vel tellus sapien. Curabitur eu leo egestas, tincidunt lectus et, convallis felis. Integer suscipit eget ante vel aliquam. Nullam feugiat lectus risus, vel sodales nibh malesuada et. Nam cursus egestas eros ac mattis. Pellentesque sagittis urna libero, non feugiat tortor sagittis a."/>
+
+        <PluseComponent
+            ImgUrl="@tempImg.AboutSectionImgs[1]"
+            TextBody="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut porta fermentum nisi vitae porta. Etiam molestie ex tellus, nec rutrum sem ultricies nec. Etiam fermentum turpis a nulla pellentesque, eget rhoncus ligula volutpat. Vivamus eu orci egestas, porttitor mi vel, rhoncus est. Cras vel tellus sapien. Curabitur eu leo egestas, tincidunt lectus et, convallis felis. Integer suscipit eget ante vel aliquam. Nullam feugiat lectus risus, vel sodales nibh malesuada et. Nam cursus egestas eros ac mattis. Pellentesque sagittis urna libero, non feugiat tortor sagittis a."
+            Reverse="true"/>
+    </section>
+
+    <section id="index-clients" class="">
+        <div class="container">
+            <div class="d-flex flex-row justify-content-around flex-wrap">
+                <ClientCardComponent
+                    Name="Website"
+                    Description="This is Blazor Website is one of this UIs"
+                    ImgHolder="@tempImg.IndexUIsList[0]"
+                    ButtonLink="https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-6.0">
+                </ClientCardComponent>
+                <ClientCardComponent
+                    Name="Website"
+                    Description="This is Blazor Website is one of this UIs"
+                    ImgHolder="@tempImg.IndexUIsList[0]"
+                    ButtonLink="https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-6.0">
+                </ClientCardComponent>
+                <ClientCardComponent
+                    Name="Website"
+                    Description="This is Blazor Website is one of this UIs"
+                    ImgHolder="@tempImg.IndexUIsList[0]"
+                    ButtonLink="https://docs.microsoft.com/en-us/aspnet/core/blazor/?view=aspnetcore-6.0">
+                </ClientCardComponent>
+            </div>
+
+        </div>
+    </section>
+
 </div>
+
+<Footer ImageHolder="@tempImg"></Footer>
+
+@code
+{
+    private readonly ImageHandler tempImg = new();
+    public bool IsLogged { get; } = false;
+}

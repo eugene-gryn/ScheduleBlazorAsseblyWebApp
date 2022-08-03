@@ -1,0 +1,64 @@
+﻿@using ScheduleBlazorAssemblyWebApp.FilenameHandlers
+<div class="mt-4 py-4 bg-black text-white-50">
+    <div class="container">
+        <div class="d-flex flex-wrap justify-content-around">
+            <div style="max-width: 300px" class="m-2 p-3 rounded-1 border border-light border-1">
+                <p class="text-center h3 text-info">Information about us</p>
+                <p>fgimminner@gmail.com</p>
+                <p>
+                    Part of the project University Schedule
+                    <a class="link-info" href="https://github.com/eugene-gryn/ScheduleBlazorAsseblyWebApp">GitHub Project</a>
+                </p>
+                <p>Copyright ©2022 MIT License</p>
+            </div>
+
+
+            <div class="m-2 p-3 rounded-1 border border-light border-1">
+                <p class="text-info">Schedule WebSite</p>
+                <p>Made by: </p>
+                <p>
+                    <a class="link-warning" href="#">Kostja8</a>
+                </p>
+                <p>
+                    <a class="link-warning" href="#">Eugene Hryn</a>
+                </p>
+            </div>
+
+            <div class="m-2 p-3 rounded-1 border border-light border-1">
+                <p class="h1 text-info text-center">Links</p>
+                <div class="d-flex flex-row flex-wrap justify-content-between">
+                    <a style="background: none;" class="m-1 link-light" href="#">
+                        <img style="max-width: 50px" class="bg-secondary bg-opacity-25 p-1" src="@ImageHolder.FooterInstaLogo" alt="My Instagram">
+                    </a>
+                    <a class="m-1 link-light" href="#">
+                        <img style="max-width: 50px" class="bg-secondary bg-opacity-25 p-1"  src="@ImageHolder.FooterGitHubLogo" alt="My GitHub">
+                    </a>
+                    <a class="m-1 link-light" href="#">
+                        <img style="max-width: 50px" class="bg-secondary bg-opacity-25 p-1"  src="@ImageHolder.FooterTGLogo" alt="My Telegram">
+                    </a>
+                </div>
+            </div>
+
+            <div class="m-2 flex-fill">
+                <div class="w-100 h-100">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11200.675829730526!2d-75.6876061!3d45.42609535!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce04ff4fe494ef%3A0x26bb54f60c29f6e!2sParliament+Hill!5e0!3m2!1sen!2sca!4v1528808935681"
+                        width="100%"
+                        height="100%"
+                        frameborder="0"
+                        style="border: 0"
+                        allowfullscreen>
+
+                    </iframe>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public ImageHandler ImageHolder { get; set; } = null!;
+}

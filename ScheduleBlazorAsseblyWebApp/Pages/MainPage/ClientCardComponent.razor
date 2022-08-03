@@ -1,0 +1,26 @@
+﻿<div class="card m-2 bg-primary bg-opacity-10" style="width: 18rem;">
+    <img class="card-img-top p-4" src="@ImgHolder" alt="Card image cap">
+    <div class="card-body">
+        <h5 class="card-title">@Name</h5>
+        <p class="card-text">@Description</p>
+        <a href="@ButtonLink" class="btn btn-outline-primary">@ButtonText</a>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public string Name { get; set; } = "Some of our UIs";
+
+    [Parameter]
+    public string ImgHolder { get; set; } = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/800px-Telegram_2019_Logo.svg.png";
+
+    [Parameter]
+    public string Description { get; set; } = "This is one of our UI clients!";
+
+    [Parameter]
+    public string ButtonText { get; set; } = "Go to somewhere";
+
+    [Parameter]
+    public string ButtonLink { get; set; } = "#";
+}
